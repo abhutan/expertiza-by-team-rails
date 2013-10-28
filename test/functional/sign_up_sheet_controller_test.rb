@@ -18,7 +18,7 @@ class SignUpSheetControllerTest < ActionController::TestCase
     AuthController.set_current_role(users(:admin).role_id,@request.session)
   end
 
-  test "should_show_add_signup_topics_staggered" do
+  test "should_show_add_signup_topics" do
     get :add_signup_topics, :id => assignments(:assignment2).id
     assert_response :success
   end
@@ -44,6 +44,7 @@ class SignUpSheetControllerTest < ActionController::TestCase
 
 
   #create new sign_up_topic for a microtask assignment
+=begin
   def test_new_microtask_topic
 
     @controller = SignUpSheetController.new
@@ -75,6 +76,7 @@ class SignUpSheetControllerTest < ActionController::TestCase
     assert_response :redirect
     assert SignUpTopic.find(:all, :conditions => ["topic_name = 'mt_topic_test' AND micropayment = 2"])
   end
+=end
 
 end
 
